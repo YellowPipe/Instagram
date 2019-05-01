@@ -1,0 +1,6 @@
+<% @posts.each do |post| %>
+	<ul>
+		<li><%= post.image %></li>
+		<li><%= post.description if post.description %></li>
+	</ul>
+<% end %>
