@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token, :only => [:index, :show]
   def new
   	@post = Post.new
   end
