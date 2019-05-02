@@ -1,2 +1,13 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+	<div class="row border py-3">
+			<div class=" col-md-6">
+			  <%= image_tag @post.image.to_s, width:"100%" %>
+			</div>
+			<div class="col-md-6">
+			  	<h5 ><%= @post.user.username %></h5>
+			    <p ><%= @post.description %></p>
+			    <%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning' %>
+			    <%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+			</div>
+	</div>
+</div>

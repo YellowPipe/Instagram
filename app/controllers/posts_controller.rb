@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: 'Post was successfully created.'
     else
-      render :new
+      render :edit
     end
   end
 
@@ -31,6 +31,13 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all
+  end
+
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_path, notice: 'Post was successfully deleted.' }
+    end
   end
 
   private

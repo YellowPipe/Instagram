@@ -50,23 +50,7 @@
   <div class="album py-5 bg-light">
     <div class="container">
     	<div class="row">
-	    	<% @user.posts.each do |post| %>
-		        <div class="col-md-4">
-		          <div class="card mb-4 shadow-sm">
-		            <%= image_tag post.image.to_s, width: '100%' %>
-		            <div class="card-body">
-		              <p class="card-text"><%= post.description if post.description %></p>
-		              <div class="d-flex justify-content-between align-items-center">
-		                <div class="btn-group">
-		                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-		                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-		                </div>
-		                <small class="text-muted">9 mins</small>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-	        <% end %>
+	    	<%= render partial: "post", collection: @posts, :as => :post %>
     	</div>
       </div>
     </div>
