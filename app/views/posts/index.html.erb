@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-		<img src="https://via.placeholder.com/400">
+		<%= image_tag post.image.to_s, width: '100%' %>
 		<%= post.description if post.description %>
 		<hr>
 <% end %>

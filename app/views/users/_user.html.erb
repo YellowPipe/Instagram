@@ -8,9 +8,9 @@
     			<div class="row">
     				<div class="col-md-6">
 	    				<h1 class="jumbotron-heading"><%= @user.username %></h1>
-	    			</div>
+	    			</div> 
 	    			<div class="col-md-6">
-	    				<a href="#" class="btn btn-secondary my-2">Edit profile</a>	
+	    				<%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-secondary my-2" if @user == current_user %>
     				</div>
 
     			</div>
@@ -53,7 +53,7 @@
 	    	<% @user.posts.each do |post| %>
 		        <div class="col-md-4">
 		          <div class="card mb-4 shadow-sm">
-		            <img src="https://via.placeholder.com/225">
+		            <%= image_tag post.image.to_s, width: '100%' %>
 		            <div class="card-body">
 		              <p class="card-text"><%= post.description if post.description %></p>
 		              <div class="d-flex justify-content-between align-items-center">

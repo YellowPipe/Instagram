@@ -1,18 +1,29 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
-  skip_before_filter :verify_authenticity_token, :only => [:index, :show]
+ 
   def new
   	@post = Post.new
   end
 
   def create
-
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_path, notice: 'Post was successfully created.'
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_path, notice: 'Post was successfully created.'
+    else
+      render :new
+    end
   end
 
   def show
