@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
   before_action :find_post
-  # before_action :set_comment, only: [:edit, :update, :destroy, :show]
   
   def create
-    @comment = @post.comments.build(comment_params)
+    @comment = @post.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
@@ -23,10 +22,6 @@ class CommentsController < ApplicationController
   # end
 
   private
-
-  # def set_comment
-  #   @comment = Comment.find(params[:id])
-  # end
 
   def comment_params
     params.require(:comment).permit(:body)

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :posts do 
     resources :comments
+    resources :likes
   end
+  
   resources :comments, only: [:create, :index, :destroy]
   get 'users', to: 'users#index'
   get 'user/:id', to: 'users#show', as: 'user_show'
