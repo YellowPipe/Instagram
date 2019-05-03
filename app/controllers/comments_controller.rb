@@ -2,14 +2,13 @@ class CommentsController < ApplicationController
   before_action :find_post
   
   def create
-    @comment = @post.comments.new(comment_params)
-    @comment.user = current_user
+    @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:success] = 'Your comment was successfully added!'
-      redirect_to root_url
     else
-      render 'new'
+      flash[:error] = 'Error occured on creating comment'
     end
+    redirect_to @post
   end
 
   # def destroy
@@ -24,11 +23,11 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :post_id)
   end
 
   def find_post
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:comment][:post_id])
   end
 
 end
