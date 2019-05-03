@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 	belongs_to :user
 
 	mount_uploader :image, InstagramUploader
+
+	has_many :comments, dependent: :destroy
 end

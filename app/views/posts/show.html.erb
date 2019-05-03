@@ -6,6 +6,8 @@
 			<div class="col-md-6">
 			  	<h5 ><%= @post.user.username %></h5>
 			    <p ><%= @post.description %></p>
+			    <%= render 'comments/comment_form', post: @post %>
+			    <%= render @comments %>
 			    <%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning' %>
 			    <%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
 			</div>
