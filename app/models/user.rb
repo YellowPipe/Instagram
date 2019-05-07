@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_posts, :through => :likes, :source => :post
   
   def follow(other_user)
     following << other_user
@@ -32,5 +33,13 @@ class User < ApplicationRecord
 
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  def like(post)
+    liked_posts << post 
+  end 
+
+  def liked?(post)
+    liked_posts.include?(post)
   end
 end

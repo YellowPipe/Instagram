@@ -19,26 +19,20 @@
 			    		<p><%= pluralize(@user.posts.count, 'publication') %></p>
 			    	</div>
 			    	<div class="col-md-4">
-			    		<p><%= pluralize(@user.followers.count, 'follower') %> </p>
+			    		<p><%= pluralize(@user.following.count, 'following') %> </p>
 			    	</div>
 			    	<div class="col-md-4">
-			    		<p><%= @user.following.count %> following</p>
+			    		  <a href="<%= followers_user_path(@user) %>">
+						    <strong id="followers">
+						      <%= @user.followers.count %>
+						    </strong>
+						    followers
+						  </a>
 			    	</div>
 			    </div>
 			    <div class="row">
 			    	<div class="col-md-12">
-			    		<% unless @user == current_user %>
-				    		<% if !current_user.following?(@user) %>
-					    		<%= form_for(current_user.active_relationships.build, remote: true) do |f|  %>
-			  						<div><%= hidden_field_tag :followed_id, @user.id %></div>
-			  						<%= f.submit "Follow", class: "btn btn-primary" %>
-								<% end %>
-								<% else %>
-								<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete },remote: true) do |f| %>
-								  <%= f.submit "Unfollow", class: "btn" %>
-								<% end %>
-							<% end %>
-						<% end %>
+			    		<%= render 'follow_form' %>
 			    		<h3>My name</h3>
 			    	</div>
 			    </div> 
