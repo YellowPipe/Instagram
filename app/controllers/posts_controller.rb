@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
- 
+  
   def new
   	@post = Post.new
   end
@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize @post
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_path, notice: 'Post was successfully deleted.' }

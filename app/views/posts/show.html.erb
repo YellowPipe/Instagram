@@ -10,8 +10,12 @@
 			    <p ><%= @post.description %></p>
 			    <%= render 'comments/comment_form', post: @post %>
 			    <%= render @comments %>
-			    <%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning' %>
-			    <%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+			    <% if policy(@post).edit? %>
+			    	<%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning' %>
+			    <% end %>
+			    <% if policy(@post).destroy? %>
+			    	<%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+			    <% end %>
 			</div>
 	</div>
 </div>
