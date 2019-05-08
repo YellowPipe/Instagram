@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Handlee');
 
 body {
   padding-top: 5rem;
@@ -37,3 +39,23 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+nav {
+  background-color: white;
+  font-size: 1.25rem
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-family: 'Handlee', cursive, 'Courier';
+}
+
+.navbar-nav {
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+// .navbar {
+//     flex-flow: row nowrap;
+//     display: inline-flex;
+// }
