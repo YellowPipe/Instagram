@@ -1,14 +1,20 @@
 <div class="card col-md-8 mx-auto my-3 pt-3">
-  <h5 class="card-title"><%= post.user.username %></h5>
+  <h5 class="card-title"><%= gravatar_for post.user, size: 35 %><%= link_to post.user.username, post.user, class: 'text-dark ml-2' %></h5>
   <%= image_tag post.image.to_s, class: "card-img-top", height:'600px' %>
   <div class="card-body">
-    <p class="card-text"><%= post.description %></p>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="card-text"><%= post.description %></p>
+      </div>
+      <div class="col-md-6 text-right">
+        <%= render 'like_form', post: post %>
+      </div>
+    </div>
   </div>
   <div class="card-footer text-muted">
-    <%= render 'like_form', post: post %>
-    <strong id="likes<%= post.id %>">
+    Liked by <strong id="likes<%= post.id %>">
       <%= post.likes.count %>
-    </strong>
-   <%= link_to 'Show Comments', post %>
+    </strong> users
+    <%= link_to 'Comment', post, class: 'float-right text-muted' %>
   </div>
 </div>
