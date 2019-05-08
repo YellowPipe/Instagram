@@ -13,8 +13,8 @@
   </div>
   <div class="card-footer text-muted">
     Liked by <strong id="likes<%= post.id %>">
-      <%= post.likes.count %>
-    </strong> users
+      <%= pluralize(post.likes.count, 'user') %>
+    </strong>
     <%= link_to 'Comment', post, class: 'float-right text-muted' %>
   </div>
 </div>

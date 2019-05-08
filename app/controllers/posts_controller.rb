@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, notice: 'Post was successfully created.'
+      redirect_to user_show_url(current_user.id), notice: 'Post was successfully created.'
     else
       render :edit
     end
@@ -38,9 +38,7 @@ class PostsController < ApplicationController
   def destroy
     authorize @post
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_path, notice: 'Post was successfully deleted.' }
-    end
+    redirect_to user_show_url(current_user.id), notice: 'Post was successfully deleted.'
   end
 
   private

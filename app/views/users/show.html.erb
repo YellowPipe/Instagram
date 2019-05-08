@@ -10,30 +10,28 @@
 	    				<h1 class="jumbotron-heading"><%= @user.username %></h1>
 	    			</div> 
 	    			<div class="col-md-6">
-	    				<%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-secondary my-2" if @user == current_user %>
+	    				<%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-outline-secondary my-2" if @user == current_user %>
     				</div>
 
     			</div>
-			    <div class="row">
+			    <div class="row my-3">
 			    	<div class="col-md-4">
 			    		<p><%= pluralize(@user.posts.count, 'publication') %></p>
 			    	</div>
 			    	<div class="col-md-4">
-			    		<p><%= pluralize(@user.following.count, 'following') %> </p>
+			    		<p><%= @user.following.count %> following</p>
 			    	</div>
 			    	<div class="col-md-4">
 			    		  <a href="<%= followers_user_path(@user) %>">
 						    <strong id="followers">
-						      <%= @user.followers.count %>
+						      <%= pluralize(@user.followers.count, 'follower') %>
 						    </strong>
-						    followers
 						  </a>
 			    	</div>
 			    </div>
 			    <div class="row">
 			    	<div class="col-md-12">
 			    		<%= render 'follow_form' %>
-			    		<h3>My name</h3>
 			    	</div>
 			    </div> 
 		  	</div>

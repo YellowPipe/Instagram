@@ -12,7 +12,9 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-light fixed-top border-bottom">
-      <%= link_to fa_icon("instagram", text: "Railsgram"), root_path, class: "navbar-brand" %>
+      <div class="mt-1">
+        <%= logo_helper %>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,7 +54,7 @@
           <a href="#">Back to top</a>
         </p>
         <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="{{ site.url }}/">Visit the homepage</a> or read our <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/introduction/">getting started guide</a>.</p>
+        <p><div>Logo icons made by <a href="https://www.freepik.com/?__hstc=57440181.f4a85e8859e5549e07dd3599cdb4b3ea.1557328279274.1557328279274.1557328279274.1&__hssc=57440181.1.1557328279277&__hsfp=3141449342" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"          title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></p>
       </div>
     </footer>
 
