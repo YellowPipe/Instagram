@@ -65,5 +65,8 @@ nav {
 
 .my-btn-unlike {
   color: red;
+  &:hover {
+        color: #d20101;
+    }
 }
 
