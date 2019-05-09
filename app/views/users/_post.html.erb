@@ -4,10 +4,10 @@
 	   	<%= image_tag post.image.to_s, width: '100%' %>
 	    <%= link_to '', post, class: 'overlay' %>  
 	</div>
-	<div class="info">
-		<div class="row">
-			<div class="col-sm-6"><%= fa_icon("heart") %> <%= post.likes.count %></div>
-			<div class="col-sm-6"><%= fa_icon("comment") %> <%= post.comments.count %></div>
+	<div class="info container">
+		<div class="row justify-content-center">
+			<div class="col-md-4"><%= fa_icon("heart") %> <%= post.likes.count %></div>
+			<div class="col-md-4"><%= fa_icon("comment") %> <%= post.comments.count %></div>
 		</div>
 	</div>
   </div>
