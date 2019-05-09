@@ -8,14 +8,18 @@
 			<div class="col-md-6">
 			  	<h5 ><%= @post.user.username %></h5>
 			    <p ><%= @post.description %></p>
-			    <%= render 'comments/comment_form', post: @post %>
-			    <%= render @comments %>
-			    <% if policy(@post).edit? %>
-			    	<%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning' %>
-			    <% end %>
-			    <% if policy(@post).destroy? %>
-			    	<%= button_to 'Delete Post', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-			    <% end %>
+				<%= render 'comments/comment_form', post: @post %>
+				<div class="comments my-3 border">
+			    	<%= render @comments %>
+			    </div>
+			    <div class="row justify-content-end mr-2">
+			    	<div class="mr-1">
+				    	<%= edit_button %>
+					</div>
+					<div class="ml-1">
+					    <%= delete_button %>
+					</div>
+				</div>
 			</div>
 	</div>
 </div>

@@ -97,3 +97,8 @@ nav {
   pointer-events: none;
 }
 
+.comments {
+  overflow-y: auto;
+  max-height: 40vh;
+}
+
