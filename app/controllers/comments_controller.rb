@@ -3,10 +3,8 @@ class CommentsController < ApplicationController
   
   def create
     @comment = current_user.comments.build(comment_params)
-    if @comment.save
-      flash[:success] = 'Your comment was successfully added!'
-    else
-      flash[:error] = 'Error occured on creating comment'
+    if !@comment.save
+      flash[:error] = "Comment can't be blank"
     end
     redirect_to @post
   end

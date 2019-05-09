@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to user_show_url(current_user.id), notice: 'Post was successfully created.'
+      redirect_to user_show_url(current_user.id), notice: 'Post was successfully updated.'
     else
       render :edit
     end
