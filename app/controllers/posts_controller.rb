@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.feed.order(created_at: :desc)
+    @posts = current_user.feed.paginate(page: params[:page], per_page: 10).order(created_at: :desc)
   end
 
   def destroy
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-	@post = Post.find(params[:id])
+	 @post = Post.find(params[:id])
   end
 
   def post_params
