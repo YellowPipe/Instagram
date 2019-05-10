@@ -5,4 +5,15 @@ module ApplicationHelper
 	        '<h2 class="navbar-brand">Railsgram</h2>'.html_safe
 	    end
 	end
+
+	def alerts
+		alert = flash[:alert] || flash[:error] || flash[:notice]
+		if alert 
+			alert_generator alert 
+		end
+	end
+
+	def alert_generator alert 
+		js add_gritter(alert, title: "Notification", time: 4000)
+	end
 end
