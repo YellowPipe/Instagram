@@ -19,9 +19,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = current_user.posts.build(post_params)
-    if @post.save
-      redirect_to user_show_url(current_user.id), notice: 'Post was successfully updated.'
+    if @post.update(edit_params)
+      redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
     end
@@ -49,6 +48,10 @@ class PostsController < ApplicationController
 
   def post_params
   	params.require(:post).permit(:description, :image)
+  end
+
+  def edit_params
+    params.require(:post).permit(:description)
   end
 
 end

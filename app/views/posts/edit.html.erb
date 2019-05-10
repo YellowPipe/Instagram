@@ -1,2 +1,25 @@
-<h1 class="text-center my-4">Edit Post</h1>
-<%= render 'form' %>
+
+<div class="container">
+	<div class="row border py-3">
+		<div class="col-md-6">
+		    <%= image_tag @post.image.to_s, width:"100%" %>
+		</div>
+		<div class="col-md-6">
+				<h1 class="text-center my-4">Edit Post</h1>
+			<%= form_with(model: @post, local: true) do |form| %>
+				  	<% if @post.errors.any? %>
+				      <% @post.errors.full_messages.each do |message| %>
+				      <%= alert_generator message %>
+				    <% end %>
+			  <% end %>
+			      <div class="form-group">
+			        <%= form.label :description %>
+			        <%= form.text_area :description, class: "form-control", rows: 10 %>
+			      </div>
+			      <div class="form-group">
+			        <%= form.submit 'Submit', class: 'btn btn-primary btn-block' %>
+			      </div>
+			<% end %>
+		</div>
+	</div>
+</div>
