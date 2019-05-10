@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :settings]
   
   def index
   	@users = User.all
@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.order(created_at: :desc)
+  end
+
+  def settings
   end
 
   private

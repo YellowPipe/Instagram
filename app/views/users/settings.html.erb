@@ -1,0 +1,24 @@
+<div class="card my-5 bg-light">
+  	<div class="card-body text-center my-5">
+  		<div class="row">
+	  		<div class="col-md-6 my-3">
+				<h3>Cancel my account</h3>
+
+				<p><%= link_to 'Delete profile', user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger my-2" %></p>
+
+				<h3>Edit my account</h3>
+
+				<%= link_to 'Edit profile', edit_user_registration_path, class: "btn btn-warning mt-2" %>
+			</div>
+			<div class="col-md-6 my-3">
+				<h3>Update account info</h3>
+
+				<%= link_to 'Edit profile information', edit_user_registration_path, class: "btn btn-primary my-2" %>
+
+				<h3>Update profile picute</h3>
+
+				<%= link_to 'Edit avatar', edit_user_registration_path, class: "btn btn-info mt-2" %>
+			</div>
+		</div>
+	</div>
+</div>
