@@ -1,6 +1,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
-  <img class="mb-4" src="https://via.placeholder.com/150" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
+  <%= image_tag 'logo.svg', class: "mb-4", width: 72, height: 72 %>
+  <h1 class="h3 mb-3 font-weight-normal text-light">Log in</h1>
 
     <%= f.label :email, class: "sr-only" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"  %>
@@ -9,13 +9,13 @@
     <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"  %>
 
   <% if devise_mapping.rememberable? %>
-    <div class="checkbox mb-3">
+    <div class="checkbox">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-    <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit "Log in", class: "btn btn-lg btn-info btn-block" %>
     <%= render "devise/shared/links" %>
 <% end %>
 
