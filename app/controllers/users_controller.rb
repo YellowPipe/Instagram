@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :settings]
+  before_action :set_user, except: [:index]
   
   def index
   	@users = User.all
@@ -10,6 +10,14 @@ class UsersController < ApplicationController
   end
 
   def settings
+  end
+
+  def followers
+    @users = @user.followers
+  end
+
+  def following
+    @users = @user.following
   end
 
   private

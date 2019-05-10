@@ -19,7 +19,11 @@
 			    		<p><%= pluralize(@user.posts.count, 'publication') %></p>
 			    	</div>
 			    	<div class="col-md-4">
-			    		<p><%= @user.following.count %> following</p>
+			    		<a href="<%= following_user_path(@user) %>">
+			    			<strong>
+				    			<p><%= @user.following.count %> following</p>
+				    		</strong>
+			    		</a>
 			    	</div>
 			    	<div class="col-md-4">
 			    		  <a href="<%= followers_user_path(@user) %>">
