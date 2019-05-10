@@ -29,15 +29,22 @@ body {
   }
 }
 
-@media screen and (max-width: 1999px) {
+
+@media screen and (max-width: 1200px) {
   body {
     background-image: url(background3.jpg);
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1669px) {
   body {
     background-image: url(background4.jpg);
+  }
+}
+
+@media screen and (min-width: 1670px) {
+  body {
+    background-image: url(background5.jpg);
   }
 }
 
