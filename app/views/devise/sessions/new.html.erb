@@ -1,7 +1,5 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
-  <%= image_tag 'logo.svg', class: "mb-4", width: 72, height: 72 %>
-  <h1 class="h3 mb-3 font-weight-normal text-light">Log in</h1>
-
+  <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
     <%= f.label :email, class: "sr-only" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"  %>
 

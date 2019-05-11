@@ -10,6 +10,24 @@
   </head>
 
   <body class="text-center">
-  	<%= yield %>
+    <div class="container">
+      <div class="row">
+      <div class="col-md-6 my-auto">
+        
+
+        
+            <%= image_tag 'smartphone', width: 400 %>
+        
+      </div>
+      <div class="col-md-6">
+        <div>
+            <%= image_tag 'logo.svg', class: "mb-1", width: 40 %>
+            <h2 class="logo">Railsgram</h2>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+    </div>
+    
   </body>
 </html>
