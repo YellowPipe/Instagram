@@ -1,10 +1,12 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Handlee');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import "gritter";
 
 body {
   padding-top: 5rem;
+  font-family: "Quicksand", "Bookman";
 }
 
 .jumbotron {
@@ -101,5 +103,18 @@ nav {
 .comments {
   overflow-y: auto;
   max-height: 280px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.next_page {
+  margin-left: 10px;
+}
+
+.previous_page {
+  margin-right: 10px;
 }
 

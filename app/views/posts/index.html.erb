@@ -1,8 +1,15 @@
 <div class="container">
+	<% if @posts.empty? %>
+		<div class="mx-auto text-center mt-5">
+			<h2>Follow some users to see their posts or upload your own</h2>
+			<p><%= link_to('Follow Users', users_path, class: "btn btn-info mt-5 px-5") %></p>
+			<p><%= link_to('Create a post', new_post_path, class: "btn btn-info my-5 px-5") %></p>
+		</div>
+	<% end %>
 	<div class="row">
 		<%= render @posts %>
 	</div>
 	<div>
-	  <%= will_paginate @posts %>
+	  <%= will_paginate @posts, :page_links => false %>
 	</div>
 </div>

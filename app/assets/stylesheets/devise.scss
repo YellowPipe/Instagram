@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "gritter";
 @import url('https://fonts.googleapis.com/css?family=Handlee');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 html,
 body {
   height: 100%;
@@ -14,6 +15,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background: linear-gradient(to right bottom, #d8e1f0, #c3d4da, #b8c4c3, #afb4b0, #a4a4a2);
+  font-family: "Quicksand", "Bookman";
 }
 
 // @media screen and (max-width: 767px) {
