@@ -1,5 +1,6 @@
 class ProfileDescriptionsController < ApplicationController
-  before_action :set_profile_description, only: [:edit, :update]
+  before_action :set_profile_description, only: [:update]
+  before_action :find_profile_description, only: [:edit]
 
   # GET /profile_descriptions/new
   def new
@@ -44,6 +45,10 @@ class ProfileDescriptionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_profile_description
       @profile_description = ProfileDescription.find(params[:id])
+    end
+
+    def find_profile_description
+      @profile_description = ProfileDescription.find_by(user_id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
