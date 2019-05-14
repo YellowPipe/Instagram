@@ -10,4 +10,10 @@ module PostsHelper
 	    	button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-warning'
 	    end
 	end
+
+	def delete_comment  comment
+		if policy(comment).destroy?
+	    	link_to 'X', comment, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger float-right'
+	    end
+	end
 end

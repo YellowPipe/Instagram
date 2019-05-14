@@ -3,8 +3,11 @@
 	<div class="col-md-2">
 		<%= gravatar_for comment.user, size: 40 %>
 	</div>
-	<div class="col-md-10 pl-0 mt-2">
+	<div class="col-md-19 pl-0 mt-2">
 		<p><strong><%= comment.user.username %></strong>: <%= comment.body %></p>
+	</div>
+	<div class="col-md-1">
+		<%= delete_comment(comment) %>
 	</div>
 </div>
 </div>
