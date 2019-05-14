@@ -35,36 +35,15 @@
 			    		<%= render 'follow_form', user: @user %>
 			    	</div>
 			    </div>
-          <div class="row">
-            <div class="col-md-12">
-              <%= profile_description_button %>
-            </div>
-          </div>
 		  	</div>
   		</div>
     </div>
   </section>
-
-  
-  <div class="container">
-  	<% if @user.profile_description %>
-    	<div class="row">
-      	<div class="col-md-12">
-      		<h3><%= @user.profile_description.name%></h3>
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-md-12">
-      		<p><%= @user.profile_description.body %></p>
-      	</div>
-      </div>
-    </div>
-  <% end %>
 
   <div class="album py-5 bg-light">
     <div class="container">
     	<div class="row">
 	    	<%= render partial: "post", collection: @posts, :as => :post %>
     	</div>
-      </div>
     </div>
+  </div>

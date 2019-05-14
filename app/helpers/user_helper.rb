@@ -4,11 +4,4 @@ module UserHelper
 	    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
 	    image_tag(gravatar_url, alt: 'avatar', class: "rounded-circle img-fluid")
   	end
-
-  	def profile_description_button
-	  	if @user.profile_description.nil? && @user == current_user
-	       link_to 'Tell people about yourself', new_profile_description_path, class: "btn btn-outline-secondary mt-2"
-	    end
-	end
-
 end

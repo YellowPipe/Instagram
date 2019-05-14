@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :profile_descriptions
   resources :posts do 
     resources :comments
   end
