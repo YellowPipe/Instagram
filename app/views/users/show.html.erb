@@ -35,6 +35,11 @@
 			    		<%= render 'follow_form', user: @user %>
 			    	</div>
 			    </div>
+          <div class="row">
+            <div class="col-md-12">
+              <%= profile_description_button %>
+            </div>
+          </div>
 		  	</div>
   		</div>
     </div>
@@ -43,21 +48,18 @@
   
   <div class="container">
   	<% if @user.profile_description %>
-  	<div class="row">
-    	<div class="col-md-12">
-    		<h3><%= @user.profile_description.name%></h3>
-    	</div>
+    	<div class="row">
+      	<div class="col-md-12">
+      		<h3><%= @user.profile_description.name%></h3>
+      	</div>
+      </div>
+      <div class="row">
+      	<div class="col-md-12">
+      		<p><%= @user.profile_description.body %></p>
+      	</div>
+      </div>
     </div>
-    <div class="row">
-    	<div class="col-md-12">
-    		<p><%= @user.profile_description.body %></p>
-    	</div>
-    </div>
-  
-  <% elsif @user == current_user %>
-    <%= link_to 'Tell us more about you', new_profile_description_path, class: "btn btn-outline-secondary mb-2 float-right" %>			    
   <% end %>
-  </div>
 
   <div class="album py-5 bg-light">
     <div class="container">

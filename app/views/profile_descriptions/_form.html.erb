@@ -1,27 +1,21 @@
 <%= form_with(model: profile_description, local: true) do |form| %>
   <% if profile_description.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile_description.errors.count, "error") %> prohibited this profile_description from being saved:</h2>
-
-      <ul>
       <% profile_description.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%= alert_generator message %>
       <% end %>
-      </ul>
-    </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="form-group">
+    <%= form.label :body, "About You" %>
+    <%= form.text_area :body, rows: 10, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn btn-outline-primary btn-block" %>
   </div>
 <% end %>
