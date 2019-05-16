@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'user/:id/settings', to: 'users#settings', as: 'user_settings'
   get 'user/:id/followers', to: 'users#followers', as: 'user_followers'
   get 'user/:id/following', to: 'users#following', as: 'user_following'
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'posts#index'
   
   resources :users do
